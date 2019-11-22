@@ -12,14 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96c3e55c-4310-4eda-97da-678db87158b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BankAcc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BankAcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BankAcc.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BankAcc.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BankAcc.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BankAcc.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BankAcc.dir/myBank.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BankAcc.dir/myBank.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myBank.c" beforeDir="false" afterPath="$PROJECT_DIR$/myBank.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myBank.h" beforeDir="false" afterPath="$PROJECT_DIR$/myBank.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +74,7 @@
       <workItem from="1574210515050" duration="4758000" />
       <workItem from="1574279020319" duration="82000" />
       <workItem from="1574368868590" duration="16196000" />
-      <workItem from="1574423472624" duration="14620000" />
+      <workItem from="1574423472624" duration="17130000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,8 @@
                                     // so the index of the array will match the account's number.
 int open_acc() ;
 void deposit_to_acc(double , int);
-void check_balance(int );
+double check_balance(int );
+int is_acc_open(int );
 
 int main() {
     float account_array[2][50];       // Initialize an array of 50 bank account with 2 parameters.
@@ -17,6 +18,7 @@ int main() {
     char action_char;                 // Determine what action the user wish to do after validation.
     int account_num;                  // Determine what on what account the user wish to make the action.
     double deposit;                   // Will contain the amount the user wish to deposit to a given account.
+    double withdraw =1;               // Will contain the amount the user wish to withdraw from a given account.
 
 
 
@@ -85,11 +87,13 @@ int main() {
                 printf("Checking balance for account number: ");
                 scanf("%d", &account_num);                                       // Input account number from user.
 
-                if(account_num-ACCNUM<0 || account_num-ACCNUM>49){                      // If the account is not in range will not allow.
-                    printf("\n The account number is invalid");
+                if(is_acc_open(account_num)==0){                                        // If the account is not in range will not allow.
+                    printf("\n The account number is invalid ");
                 }
                 else{
-                    check_balance(account_num);                                         // Use get balance function to show balance.
+                    if(check_balance(account_num)!=0){                                   // Use get balance function to show balance.
+                        printf("\n The balance is : %.2lf",check_balance(account_num));
+                    }
                 }
 
                 account_num =0;                                                         // Rest parameters and scanf buffer
@@ -101,8 +105,9 @@ int main() {
             case 'D':{
                 printf("\n Account number for deposit:");
                 scanf("%d", &account_num);
+                while ((getchar()) != '\n');
 
-                if(account_num-ACCNUM<0 || account_num-ACCNUM>49){                      // If the account is not in range will not allow.
+                if(is_acc_open(account_num)==0){                      // If the account is not in range will not allow.
                     printf("\n The account number is invalid");
                     break;
                 } else{
@@ -113,14 +118,37 @@ int main() {
                     } else{
                         deposit_to_acc(deposit, account_num-ACCNUM);
                     }
-
-
                 }
 
                 account_num =0;                                                             // Rest parameters and scanf buffer
                 deposit =0;
                 while ((getchar()) != '\n');
                 break;
+            }
+
+            case 'W':{
+                printf("\n Account number for withdraw:");
+                scanf("%d", &account_num);
+                while ((getchar()) != '\n');
+
+                if(check_balance(account_num)==0){                      // If the account is not in range will not allow.
+                    printf("\n The account is invalid or has zero balance");
+                    break;
+                } else{
+                    printf("\n How much would you like to withdraw? ");
+                    scanf("%lf",&withdraw);
+                    if(withdraw < 0){
+                        printf("\n not a valid deposit");
+                    } else{
+                        deposit_to_acc(withdraw*-1, account_num-ACCNUM);
+                    }
+                }
+
+                account_num =0;                                                             // Rest parameters and scanf buffer
+                withdraw =0;
+                while ((getchar()) != '\n');
+                break;
+
             }
 
 
