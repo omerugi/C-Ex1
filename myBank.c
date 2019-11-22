@@ -64,6 +64,34 @@ void close_acc(int acc_num){
     printf("\n The account %d has been closed",acc_num);
 
 }
+void add_interest(double interest){
+
+    for (int i = 0; i < 50 ; ++i) {
+        if(is_acc_open(i+ACCNUM)==1){
+            account_array[1][i]= account_array[1][i]*(interest+100)/100;
+        }
+    }
+
+}
+
+void print_all_acc(){
+    for (int i = 0; i < 50 ; ++i) {
+        if(is_acc_open(i+ACCNUM)==1){
+            printf("\n Account number: %d  Balance: %.2lf",i+ACCNUM,account_array[1][i]);
+        }
+    }
+
+}
+
+void close_all_acc(){
+    for (int i = 0; i < 50 ; ++i) {
+        if(is_acc_open(i+ACCNUM)==1){
+            close_acc(i+ACCNUM);
+        }
+    }
+
+}
+
 
 
 
