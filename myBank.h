@@ -5,7 +5,7 @@
 
 
 int open_acc();
-void deposit(double);
+void deposit_to_acc(double, int);
 
 
 

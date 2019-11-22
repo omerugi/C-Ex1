@@ -26,8 +26,8 @@ double two_digit_dcimal(double dep){
 
 void deposit_to_acc(double dep, int acc ){
     dep = two_digit_dcimal(dep);
-    account_array[1][acc] += dep;
-    printf("\n The balance in account number %d is: %.2lf \n",acc+ACCNUM, account_array[1][acc]);
+    account_array[1][acc] = account_array[1][acc] + dep;
+   printf("\n The balance in account number %d is: %.2lf \n",acc+ACCNUM, account_array[1][acc]);
 }
 
 void check_balance(int acc){
@@ -38,8 +38,9 @@ void check_balance(int acc){
     else{
         printf("%.2lf", account_array[1][acc_index]);
     }
-
 }
+
+
 
 
 

@@ -2,13 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-
-
 #define ACCNUM 901                  // Account's numbers are from 901-950 this will add 901
                                     // so the index of the array will match the account's number.
 int open_acc() ;
-void deposit_to_acc(double dep, int acc );
-void check_balance(int acc);
+void deposit_to_acc(double , int);
+void check_balance(int );
 
 int main() {
     float account_array[2][50];       // Initialize an array of 50 bank account with 2 parameters.
@@ -53,6 +51,11 @@ int main() {
             action_char = action_str[0];                                               // If it is 1 set the char to be the char the user entered
         }
 
+
+        while ((getchar()) != '\n');
+
+
+
         switch(action_char)
         {
             case 'O':{                                                                  // Case O: Open new acc.
@@ -74,9 +77,9 @@ int main() {
             account_num =0;                                                             // Rest parameters and scanf buffer
             deposit =0;
             while ((getchar()) != '\n');
-
             break;
             }
+
             case 'B':{                                                                  // Case B: Check balance.
 
                 printf("Checking balance for account number: ");
@@ -91,31 +94,32 @@ int main() {
 
                 account_num =0;                                                         // Rest parameters and scanf buffer
                 while ((getchar()) != '\n');
+                break;
             }
 
-            case 'D': {
 
-                printf("Deposit to account number: ");                          // Case D: Deposit to account.
-                scanf("%d", &account_num);                                      // Input from user
+            case 'D':{
+                printf("\n Account number for deposit:");
+                scanf("%d", &account_num);
 
-                if (account_num - ACCNUM < 0 || account_num - ACCNUM > 49) {           // If the account is not in range will not allow.
+                if(account_num-ACCNUM<0 || account_num-ACCNUM>49){                      // If the account is not in range will not allow.
                     printf("\n The account number is invalid");
-                } else {
+                    break;
+                } else{
                     printf("\n How much would you like to deposit? ");
-                    scanf("%lf", &deposit);
-                    if (deposit <
-                        0) {                                                       // If negative deposit will not allow it.
+                    scanf("%lf",&deposit);
+                    if(deposit < 0){
                         printf("\n not a valid deposit");
-                    } else {
-                        deposit_to_acc(deposit,
-                                       account_num);                              // Use the deposit function to add it to the amount in the bank.
+                    } else{
+                        deposit_to_acc(deposit, account_num-ACCNUM);
                     }
 
+
                 }
-                account_num =0;
+
+                account_num =0;                                                             // Rest parameters and scanf buffer
                 deposit =0;
                 while ((getchar()) != '\n');
-
                 break;
             }
 
@@ -125,12 +129,11 @@ int main() {
                 break;
             }
 
+
             default:
                 printf("Error! operator is not correct");
+
         }
-
-
-
 
 
     }
