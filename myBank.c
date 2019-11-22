@@ -57,8 +57,13 @@ void deposit_to_acc(double dep, int acc ){
     printf("\n The balance in account number %d is: %.2lf \n",acc+ACCNUM, account_array[1][acc]);
 }
 
+void close_acc(int acc_num){
+    int acc_index = acc_num-ACCNUM;
+    account_array[0][acc_index] = 0;
+    account_array[1][acc_index] = 0;
+    printf("\n The account %d has been closed",acc_num);
 
-
+}
 
 
 

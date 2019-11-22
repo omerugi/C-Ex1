@@ -8,6 +8,7 @@ int open_acc() ;
 void deposit_to_acc(double , int);
 double check_balance(int );
 int is_acc_open(int );
+void close_acc(int );
 
 int main() {
     float account_array[2][50];       // Initialize an array of 50 bank account with 2 parameters.
@@ -149,6 +150,22 @@ int main() {
                 while ((getchar()) != '\n');
                 break;
 
+            }
+
+            case 'C':{
+                printf("\n Account number to close:");
+                scanf("%d", &account_num);
+                while ((getchar()) != '\n');
+
+                if(is_acc_open(account_num)==0){
+                    printf("\n The account is invalid or already closed");
+                    break;
+                } else{
+                    close_acc(account_num);
+                }
+
+                account_num=0;
+                break;
             }
 
 
