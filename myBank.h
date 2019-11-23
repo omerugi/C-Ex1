@@ -1,12 +1,10 @@
 
+int open_acc() ;
+void deposit_to_acc(double , int, int);
+double check_balance(int );
+int is_acc_open(int );
+void close_acc(int );
+void add_interest(double);
+void print_all_acc();
+void close_all_acc();
 
-#ifndef BANKACC_MYBANK_H
-#define BANKACC_MYBANK_H
-
-
-int open_acc();
-void deposit_to_acc(double, int);
-
-
-
-#endif //BANKACC_MYBANK_H

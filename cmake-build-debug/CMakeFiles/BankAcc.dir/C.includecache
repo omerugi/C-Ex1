@@ -6,19 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/omerugi/CLionProjects/BankAcc/main.c
-stdio.h
--
-string.h
--
-stdlib.h
--
-math.h
--
-
 /home/omerugi/CLionProjects/BankAcc/myBank.c
 stdio.h
 -
-string.h
--
+myBank.h
+/home/omerugi/CLionProjects/BankAcc/myBank.h
+
+/home/omerugi/CLionProjects/BankAcc/myBank.h
 

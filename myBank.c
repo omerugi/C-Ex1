@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include "myBank.h"
 #define ACCNUM 901
 
 //// This array will represent the account.
@@ -120,6 +120,7 @@ void close_acc(int acc_num){
 
     if(is_acc_open(acc_num)==0){
         printf("\n The account is invalid or already closed");
+        return;
     }
     int acc_index = acc_num-ACCNUM;
     account_array[0][acc_index] = 0;

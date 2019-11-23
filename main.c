@@ -1,17 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <math.h>
+#include "myBank.h"
 #define ACCNUM 901                                                                                                       // Account's numbers are from 901-950 this will add 901
                                                                                                                          // so the index of the array will match the account's number.
-int open_acc() ;
-void deposit_to_acc(double , int, int);
-double check_balance(int );
-int is_acc_open(int );
-void close_acc(int );
-void add_interest(double);
-void print_all_acc();
-void close_all_acc();
 
 int main() {
 
