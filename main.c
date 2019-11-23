@@ -32,33 +32,30 @@ int main() {
            "\tB - Balance of a given account\n"
            "\tD - Deposit to a given account\n"
            "\tW - Withdraw from a given account\n"
-           "\tC - Close the account"
+           "\tC - Close the account\n"
            "\tI - Interest adding to all open accounts\n"
            "\tP - Print all the open accounts and balance\n"
            "\tE - Close all accounts and end the program\n");
     printf("\nNote:\n"
-           "++  Must open account before doing any action on them.\n"
+           "++  Must open account before doing any action on account.\n"
            "++  Can open up to 50 accounts only.\n"
-           "++  Deposit/balance will real numbers with only two digits after decimal point.\n"
-           "++  Deposit with more then two digit after decimal point will be rounded.\n ");
+           "++  Deposit/balance/withdraw real numbers with only two digits after decimal point.\n"
+           "++  Deposit/withdraw with more then two digit after decimal point will be rounded.\n"
+           "++  Characters other then number's in any of the cases will be ignored \n ");
 
 
-    while(boolean){
 
+    LOOP:
         printf("\n What actions would you like to do:");
         scanf("%s", action_str);                                                                                  // Scan into a temp string the operation the user want's to make
          if(strlen(action_str) != 1){                                                                                    // Check the string length, most be 1 char
-            printf("not valid \n");action_char = 'F';                                                             // If not 1 char, will give F so in switch case will go to default
+            printf("\n not valid \n");action_char = 'F';                                                          // If not 1 char, will give F so in switch case will go to default
         }
         else {
-            printf("valid \n");
             action_char = action_str[0];                                                                                 // If it is 1 set the char to be the char the user entered
         }
 
-
         while ((getchar()) != '\n');
-
-
 
         switch(action_char)
         {
@@ -89,13 +86,12 @@ int main() {
                 printf("Checking balance for account number: ");
                 scanf("%d", &account_num);                                                                        // Input account number from user.
 
-                if(is_acc_open(account_num)==0){                                                                         // If the account is not in range will not allow.
-                    printf("\n The account number is invalid ");
+                if(is_acc_open(account_num)==0){                                                                         // Will use is_acc_open to determine if the it's a valid account
+                    printf("\n The account number is invalid ");                                                  // Print out an invalid message and break and loop again
+                    break;
                 }
                 else{
-                    if(check_balance(account_num)!=0){                                                                   // Use get balance function to show balance.
-                        printf("\n The balance is : %.2lf",check_balance(account_num));
-                    }
+                        printf("\n The balance is : %.2lf",check_balance(account_num));                           // If valid account, Use get balance function to show balance.
                 }
 
                 account_num =0;                                                                                          // Rest parameters and scanf buffer
@@ -104,21 +100,21 @@ int main() {
             }
 
 
-            case 'D':{
+            case 'D':{                                                                                                   // Case D: Deposit.
                 printf("\n Account number for deposit:");
                 scanf("%d", &account_num);
                 while ((getchar()) != '\n');
 
-                if(is_acc_open(account_num)==0){                                                                         // If the account is not in range will not allow.
-                    printf("\n The account number is invalid");
+                if(is_acc_open(account_num)==0){                                                                         // Will use is_acc_open to determine if the it's a valid account
+                    printf("\n The account number is invalid");                                                   // Print out an invalid message and break and loop again
                     break;
                 } else{
                     printf("\n How much would you like to deposit? ");
                     scanf("%lf",&deposit);
-                    if(deposit < 0){
-                        printf("\n not a valid deposit");
+                    if(deposit < 0){                                                                                     // Check is the deposit is positive.
+                        printf("\n not a valid deposit");                                                         // If not print out an in valid deposit message.
                     } else{
-                        deposit_to_acc(deposit, account_num-ACCNUM);
+                        deposit_to_acc(deposit, account_num-ACCNUM);                                                     // If valid, will use deposit_to_acc function.
                     }
                 }
 
@@ -133,16 +129,16 @@ int main() {
                 scanf("%d", &account_num);
                 while ((getchar()) != '\n');
 
-                if(check_balance(account_num)==0){                                                                       // If the account is not in range will not allow.
-                    printf("\n The account is invalid or has zero balance");
+                if(check_balance(account_num)==0){                                                                       // Will use is_acc_open to determine if the it's a valid account
+                    printf("\n The account is invalid or has zero balance");                                      // Print out an invalid message and break and loop again
                     break;
                 } else{
                     printf("\n How much would you like to withdraw? ");
                     scanf("%lf",&withdraw);
-                    if(withdraw < 0){
-                        printf("\n not a valid deposit");
+                    if(withdraw < 0){                                                                                    // Check is the withdraw is positive.
+                        printf("\n not a valid deposit");                                                         // If not print out an in valid deposit message.
                     } else{
-                        deposit_to_acc(withdraw*-1, account_num-ACCNUM);
+                        deposit_to_acc(withdraw*-1, account_num-ACCNUM);                                                 // If valid, will use deposit_to_acc with a negative "deposit"
                     }
                 }
 
@@ -153,52 +149,50 @@ int main() {
 
             }
 
-            case 'C':{
+            case 'C':{                                                                                                   // Case C: close account.
                 printf("\n Account number to close:");
                 scanf("%d", &account_num);
                 while ((getchar()) != '\n');
 
-                if(is_acc_open(account_num)==0){
-                    printf("\n The account is invalid or already closed");
+                if(is_acc_open(account_num)==0){                                                                         // Will use is_acc_open to determine if the it's a valid account.
+                    printf("\n The account is invalid or already closed");                                        // Print out an invalid message and break and loop again.
                     break;
                 } else{
-                    close_acc(account_num);
+                    close_acc(account_num);                                                                              // If valid, will use the close_acc function.
                 }
-
-                account_num=0;
+                account_num=0;                                                                                           // Rest parameters.
                 break;
             }
 
 
-            case 'I':{
+            case 'I':{                                                                                                   // Case I: add interest.
                 printf("\n How much interest to add:");
                 scanf("%lf", &interest);
                 while ((getchar()) != '\n');
-                add_interest(interest);
+                add_interest(interest);                                                                                  // Will use add_interest function.
                 interest=0;
                 break;
             }
 
-            case 'P':{
-                print_all_acc();
+            case 'P':{                                                                                                   // Case P: print all open accounts.
+                print_all_acc();                                                                                         // Will use print_all_acc function.
                 break;
             }
 
-            case 'E':{
-                close_all_acc();
-                boolean =0;
+            case 'E':{                                                                                                   // Case E: close all accounts and finish the program.
+                close_all_acc();                                                                                         // use close_all_acc function.
+                goto END;
                 break;
             }
 
 
-            default:
+            default:                                                                                                     // If giving an invalid operation.
                 printf("Error! operator is not correct");
 
         }
+        goto LOOP;
 
-
-    }
-
+    END:
     printf("\n the end");
 
 
