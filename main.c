@@ -5,7 +5,7 @@
 #define ACCNUM 901                                                                                                       // Account's numbers are from 901-950 this will add 901
                                                                                                                          // so the index of the array will match the account's number.
 int open_acc() ;
-void deposit_to_acc(double , int);
+void deposit_to_acc(double , int, int);
 double check_balance(int );
 int is_acc_open(int );
 void close_acc(int );
@@ -54,27 +54,20 @@ int main() {
         else {
             action_char = action_str[0];                                                                                 // If it is 1 set the char to be the char the user entered
         }
-
         while ((getchar()) != '\n');
 
         switch(action_char)
         {
             case 'O':{                                                                                                   // Case O: Open new acc.
             account_num = open_acc();                                                                                    // Use open_acc function to get new account number.
-
             if(account_num == -1){                                                                                       // == -1, Meaning no account available.
                 printf("\n Sorry no available account at the moment \n");
             }
             else{                                                                                                        // Ask for amount to deposit.
                 printf("\n How much would you like to deposit? ");
                 scanf("%lf", &deposit);
-                if(deposit < 0){                                                                                         // If negative deposit will not allow it.
-                    printf("\n not a valid deposit");
-                }else {
-                    deposit_to_acc(deposit, account_num);                                                                // Use the deposit function to add it to the amount in the bank.
-                }
+                deposit_to_acc(deposit, account_num, 1);                                                                 // Use the deposit function to add it to the amount in the bank.
             }
-
             account_num =0;                                                                                              // Rest parameters and scanf buffer
             deposit =0;
             while ((getchar()) != '\n');
@@ -91,7 +84,7 @@ int main() {
                     break;
                 }
                 else{
-                        printf("\n The balance is : %.2lf",check_balance(account_num));                           // If valid account, Use get balance function to show balance.
+                    printf("\n The balance is : %.2lf",check_balance(account_num));                               // If valid account, Use get balance function to show balance.
                 }
 
                 account_num =0;                                                                                          // Rest parameters and scanf buffer
@@ -104,20 +97,9 @@ int main() {
                 printf("\n Account number for deposit:");
                 scanf("%d", &account_num);
                 while ((getchar()) != '\n');
-
-                if(is_acc_open(account_num)==0){                                                                         // Will use is_acc_open to determine if the it's a valid account
-                    printf("\n The account number is invalid");                                                   // Print out an invalid message and break and loop again
-                    break;
-                } else{
-                    printf("\n How much would you like to deposit? ");
-                    scanf("%lf",&deposit);
-                    if(deposit < 0){                                                                                     // Check is the deposit is positive.
-                        printf("\n not a valid deposit");                                                         // If not print out an in valid deposit message.
-                    } else{
-                        deposit_to_acc(deposit, account_num-ACCNUM);                                                     // If valid, will use deposit_to_acc function.
-                    }
-                }
-
+                printf("\n How much would you like to deposit? ");
+                scanf("%lf",&deposit);
+                deposit_to_acc(deposit, account_num-ACCNUM, 1);                                                          // Will use deposit_to_acc function.
                 account_num =0;                                                                                          // Rest parameters and scanf buffer
                 deposit =0;
                 while ((getchar()) != '\n');
@@ -129,18 +111,9 @@ int main() {
                 scanf("%d", &account_num);
                 while ((getchar()) != '\n');
 
-                if(check_balance(account_num)==0){                                                                       // Will use is_acc_open to determine if the it's a valid account
-                    printf("\n The account is invalid or has zero balance");                                      // Print out an invalid message and break and loop again
-                    break;
-                } else{
-                    printf("\n How much would you like to withdraw? ");
-                    scanf("%lf",&withdraw);
-                    if(withdraw < 0){                                                                                    // Check is the withdraw is positive.
-                        printf("\n not a valid deposit");                                                         // If not print out an in valid deposit message.
-                    } else{
-                        deposit_to_acc(withdraw*-1, account_num-ACCNUM);                                                 // If valid, will use deposit_to_acc with a negative "deposit"
-                    }
-                }
+                 printf("\n How much would you like to withdraw? ");
+                 scanf("%lf",&withdraw);
+                 deposit_to_acc(withdraw*-1, account_num-ACCNUM,0);                                                      // Will use deposit_to_acc with a negative "deposit"
 
                 account_num =0;                                                                                          // Rest parameters and scanf buffer
                 withdraw =0;
@@ -153,13 +126,7 @@ int main() {
                 printf("\n Account number to close:");
                 scanf("%d", &account_num);
                 while ((getchar()) != '\n');
-
-                if(is_acc_open(account_num)==0){                                                                         // Will use is_acc_open to determine if the it's a valid account.
-                    printf("\n The account is invalid or already closed");                                        // Print out an invalid message and break and loop again.
-                    break;
-                } else{
-                    close_acc(account_num);                                                                              // If valid, will use the close_acc function.
-                }
+                close_acc(account_num);                                                                                  // Will use the close_acc function.
                 account_num=0;                                                                                           // Rest parameters.
                 break;
             }

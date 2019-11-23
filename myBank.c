@@ -85,12 +85,27 @@ double two_digit_dcimal(double dep){
 
 /**
  * This function will deposit a given amount to a selected account.
- * Will first convert the deposit to be with only two digits after decimal point.
- * Will add the deposit amount to the account in the array.
+ * by 1. use is_acc_open 2. Check if the dep is valid according to the action that would like to do
+ * 3. If all valid will convert the deposit to be with only two digits after decimal point.
+ * 4. Will add the deposit amount to the account in the array.
  * @param dep - The amount wish to deposit.
  * @param acc - The account number wish to deposit to.
+ * @param action - Will determine what action would like to do: 1 - Deposit 0 - Withdraw
  */
-void deposit_to_acc(double dep, int acc ){
+void deposit_to_acc(double dep, int acc, int action){
+
+    if(is_acc_open(acc+ACCNUM)==0){
+        printf("\n The account number is invalid");
+        return;
+    }
+    else if(action == 1 && dep < 0){
+        printf("\n Not a valid deposit");
+        return;
+    } else if(action == 0 && dep > 0){
+        printf("\n Not a valid withdraw");
+        return;
+    }
+
     dep = two_digit_dcimal(dep);
     account_array[1][acc] = account_array[1][acc] + dep;
     printf("\n The balance in account number %d is: %.2lf \n",acc+ACCNUM, account_array[1][acc]);
@@ -98,10 +113,14 @@ void deposit_to_acc(double dep, int acc ){
 
 /**
  * This function will close any given account
- * by setting the "open" parameter to zero and the balance parameter to zero.
+ * by 1. use is_acc_open 2. If valid setting the "open" parameter to zero and the balance parameter to zero.
  * @param acc_num - The account number wish to close.
  */
 void close_acc(int acc_num){
+
+    if(is_acc_open(acc_num)==0){
+        printf("\n The account is invalid or already closed");
+    }
     int acc_index = acc_num-ACCNUM;
     account_array[0][acc_index] = 0;
     account_array[1][acc_index] = 0;
