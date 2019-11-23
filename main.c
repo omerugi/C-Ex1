@@ -5,8 +5,7 @@
                                                                                                                          // so the index of the array will match the account's number.
 
 int main() {
-
-    int boolean = 1;                                                                                                     // The "boolean" that will track is the user want to stay or close the program.
+    
     char action_str[100] ;                                                                                               // Temp string to contain user input and validate before continuing
     char action_char;                                                                                                    // Determine what action the user wish to do after validation.
     int account_num;                                                                                                     // Determine what on what account the user wish to make the action.
@@ -100,7 +99,7 @@ int main() {
             case 'W':{
                 printf("\n Account number for withdraw:");
                 scanf("%d", &account_num);
-                while ((getchar()) != '\n');
+
 
                  printf("\n How much would you like to withdraw? ");
                  scanf("%lf",&withdraw);
