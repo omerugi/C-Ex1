@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/omerugi/CLionProjects/BankAcc/main.c" "/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/CMakeFiles/BankAcc.dir/main.c.o"
-  "/home/omerugi/CLionProjects/BankAcc/myBank.c" "/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/CMakeFiles/BankAcc.dir/myBank.c.o"
+  "/home/omerugi/CLionProjects/C-Ex1/main.c" "/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/CMakeFiles/BankAcc.dir/main.c.o"
+  "/home/omerugi/CLionProjects/C-Ex1/myBank.c" "/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/CMakeFiles/BankAcc.dir/myBank.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

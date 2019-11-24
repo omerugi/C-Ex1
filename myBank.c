@@ -93,7 +93,7 @@ double two_digit_dcimal(double dep){
  * @param action - Will determine what action would like to do: 1 - Deposit 0 - Withdraw
  */
 void deposit_to_acc(double dep, int acc, int action){
-
+    dep = two_digit_dcimal(dep);
     if(is_acc_open(acc+ACCNUM)==0){
         printf("\n The account number is invalid");
         return;
@@ -105,8 +105,10 @@ void deposit_to_acc(double dep, int acc, int action){
         printf("\n Not a valid withdraw");
         return;
     }
-
-    dep = two_digit_dcimal(dep);
+    else if(account_array[1][acc] + dep<0){
+        printf("\n Not a valid withdraw");
+        return;
+    }
     account_array[1][acc] = account_array[1][acc] + dep;
     printf("\n The balance in account number %d is: %.2lf \n",acc+ACCNUM, account_array[1][acc]);
 }

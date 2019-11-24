@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/omerugi/CLionProjects/BankAcc/myBank.c
+/home/omerugi/CLionProjects/C-Ex1/myBank.c
 stdio.h
 -
 myBank.h
-/home/omerugi/CLionProjects/BankAcc/myBank.h
+/home/omerugi/CLionProjects/C-Ex1/myBank.h
 
-/home/omerugi/CLionProjects/BankAcc/myBank.h
+/home/omerugi/CLionProjects/C-Ex1/myBank.h
 

@@ -100,7 +100,6 @@ int main() {
                 printf("\n Account number for withdraw:");
                 scanf("%d", &account_num);
 
-
                  printf("\n How much would you like to withdraw? ");
                  scanf("%lf",&withdraw);
                  deposit_to_acc(withdraw*-1, account_num-ACCNUM,0);                                                      // Will use deposit_to_acc with a negative "deposit"

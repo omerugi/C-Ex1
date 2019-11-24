@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug"/>
+				<Option working_dir="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug"/>
+				<Option working_dir="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BankAcc">
-				<Option output="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/BankAcc" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug"/>
+				<Option output="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/BankAcc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -41,15 +41,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 BankAcc"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 BankAcc"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BankAcc/fast">
-				<Option output="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/BankAcc" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug"/>
+				<Option output="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/BankAcc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -61,36 +61,36 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 BankAcc/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 BankAcc/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/omerugi/CLionProjects/BankAcc/cmake-build-debug"/>
+				<Option working_dir="/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/omerugi/CLionProjects/BankAcc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/omerugi/CLionProjects/C-Ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/omerugi/CLionProjects/BankAcc/main.c">
+		<Unit filename="/home/omerugi/CLionProjects/C-Ex1/main.c">
 			<Option target="BankAcc"/>
 		</Unit>
-		<Unit filename="/home/omerugi/CLionProjects/BankAcc/myBank.c">
+		<Unit filename="/home/omerugi/CLionProjects/C-Ex1/myBank.c">
 			<Option target="BankAcc"/>
 		</Unit>
-		<Unit filename="/home/omerugi/CLionProjects/BankAcc/myBank.cpp">
+		<Unit filename="/home/omerugi/CLionProjects/C-Ex1/myBank.cpp">
 			<Option target="BankAcc"/>
 		</Unit>
-		<Unit filename="/home/omerugi/CLionProjects/BankAcc/myBank.h">
+		<Unit filename="/home/omerugi/CLionProjects/C-Ex1/myBank.h">
 			<Option target="BankAcc"/>
 		</Unit>
-		<Unit filename="/home/omerugi/CLionProjects/BankAcc/CMakeLists.txt">
+		<Unit filename="/home/omerugi/CLionProjects/C-Ex1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
