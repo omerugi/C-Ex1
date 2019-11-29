@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include "myBank.h"
 #define ACCNUM 901
+#define ROW 2
+#define COLUMN 50
 
 //// This array will represent the account.
 //// The first [] parameter - will determine if the account is closed/open.
 ///  The second [] parameter - will determine the balance in the account.
-static double account_array[2][50];
+float account_array[ROW][COLUMN];
 
 /**
  * This function will check if a given account number us -valid-
- * by checking if it's in the range of 50.
+ * by checking if it's in the range of the 901-950.
  * @param acc_num - an account number
  * @return 0 - invalid account. 1 - valid account.
  */
@@ -31,7 +33,6 @@ int is_acc_open(int acc_num){
     if(is_acc_valid(acc_num)==0){
         return 0;
     }
-
     if(account_array[0][acc_num-ACCNUM]==0){
         return 0;
     }
@@ -40,8 +41,7 @@ int is_acc_open(int acc_num){
 
 /**
  * This function will check the balance of a given account,
- * by: 1. use is_acc_open 2. If open will take the amount from the place in the array.
- *
+ * by: 1. use is_acc_open 2. If valid and open will take the amount from the place in the array.
  * @param acc_num - an account number
  * @return 0 - invalid/close account. otherwise the balance of the account
  */
@@ -77,9 +77,9 @@ int open_acc(){
  * @param dep - Number wish to convert.
  * @return The number after conversion.
  */
-double two_digit_dcimal(double dep){
-    double temp = (int)(dep*100);
-    dep = (double)temp/100;
+float two_digit_dcimal(float dep){
+    float temp = (int long long)(dep*100);
+    dep = (float)temp/100;
     return dep;
 }
 
@@ -92,8 +92,10 @@ double two_digit_dcimal(double dep){
  * @param acc - The account number wish to deposit to.
  * @param action - Will determine what action would like to do: 1 - Deposit 0 - Withdraw
  */
-void deposit_to_acc(double dep, int acc, int action){
+void deposit_to_acc(float dep, int acc, int action){
+
     dep = two_digit_dcimal(dep);
+
     if(is_acc_open(acc+ACCNUM)==0){
         printf("\n The account number is invalid");
         return;
@@ -140,7 +142,7 @@ void add_interest(double interest){
 
     for (int i = 0; i < 50 ; ++i) {
         if(is_acc_open(i+ACCNUM)==1){
-            account_array[1][i]= account_array[1][i]*(interest+100)/100;
+            account_array[1][i]= two_digit_dcimal(account_array[1][i]*(interest+100)/100);
         }
     }
 
