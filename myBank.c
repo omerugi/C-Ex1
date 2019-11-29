@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "myBank.h"
 #define ACCNUM 901
 #define ROW 2
 #define COLUMN 50
